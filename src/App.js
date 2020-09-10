@@ -8,17 +8,17 @@ import AlbumIcon from '@material-ui/icons/Album';
 import CommentIcon from '@material-ui/icons/Comment';
 
 import { UserList } from './users';
-import { PostList } from './posts';
+import { PostList, PostEdit, PostCreate, PostShow } from './posts';
+import { CommentList, CommentShow, CommentEdit, CommentCreate} from './comments';
 import { AlbumList, AlbumEdit, AlbumShow, AlbumCreate } from './album.js';
-import { CommentList } from './comments';
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 const App = () => (
     <Admin dataProvider={dataProvider}>
         <Resource name="users" icon={UserIcon} list={UserList} />
-        <Resource name="posts" icon={PostIcon} list={PostList} />
+        <Resource name="posts" icon={PostIcon} list={PostList} edit={PostEdit} create={PostCreate} show={PostShow} />
         <Resource name="albums" icon={AlbumIcon} list={AlbumList} edit={AlbumEdit} show={AlbumShow} create={AlbumCreate} />
-        <Resource name="comments" icon={CommentIcon} list={CommentList} />
+        <Resource name="comments" icon={CommentIcon} list={CommentList} show={CommentShow} edit={CommentEdit} create={CommentCreate} />
     </Admin>
 );
 export default App;
