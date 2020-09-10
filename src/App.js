@@ -9,7 +9,7 @@ import CommentIcon from '@material-ui/icons/Comment';
 
 import { UserList } from './users';
 import { PostList } from './posts';
-import { AlbumList } from './album.js';
+import { AlbumList, AlbumEdit, AlbumShow, AlbumCreate } from './album.js';
 import { CommentList } from './comments';
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
@@ -17,7 +17,7 @@ const App = () => (
     <Admin dataProvider={dataProvider}>
         <Resource name="users" icon={UserIcon} list={UserList} />
         <Resource name="posts" icon={PostIcon} list={PostList} />
-        <Resource name="albums" icon={AlbumIcon} list={AlbumList} />
+        <Resource name="albums" icon={AlbumIcon} list={AlbumList} edit={AlbumEdit} show={AlbumShow} create={AlbumCreate} />
         <Resource name="comments" icon={CommentIcon} list={CommentList} />
     </Admin>
 );
